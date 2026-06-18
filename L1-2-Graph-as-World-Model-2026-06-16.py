@@ -70,6 +70,9 @@ labels = {
     4: "Goal"
 }
 
+# Set the layout - controls how nodes are positioned visually
+pos = nx.spring_layout(G, seed=42, k=2)
+
 # Draw the world
 plt.figure(figsize=(8, 5))
 nx.draw(G, 
