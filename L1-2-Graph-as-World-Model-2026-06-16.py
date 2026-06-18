@@ -71,7 +71,9 @@ labels = {
 }
 
 # Set the layout - controls how nodes are positioned visually
-pos = nx.spring_layout(G, seed=42, k=2)
+pos = nx.kamada_kawai_layout(G)
+# Flip horizontally so Start is on the left, Goal on the right
+pos = {node: (-x, y) for node, (x, y) in pos.items()}
 
 # Draw the world
 plt.figure(figsize=(8, 5))
